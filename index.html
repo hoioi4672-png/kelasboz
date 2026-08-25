@@ -57,7 +57,7 @@
         <div class="sidebar-card"><p>Wali kelas</p><strong>Wali Kelas XII TKJ 4</strong></div>
     </aside>
     <main class="main" id="beranda">
-        <header class="topbar"><div><p class="eyebrow">Selasa, 25 Agustus 2026</p><h1>Halo, warga kelas.</h1><p class="date">Semua informasi kelas ada di satu tempat.</p></div><div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode gelap" title="Ganti tema"><span class="theme-icon" id="themeIcon">☾</span><span id="themeLabel">Mode gelap</span></button><div class="profile"><div class="avatar">WK</div><span>Wali Kelas</span></div></div></header>
+        <header class="topbar"><div><p class="eyebrow" id="currentDate">Memuat tanggal...</p><h1>Halo, warga kelas.</h1><p class="date">Semua informasi kelas ada di satu tempat.</p></div><div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode gelap" title="Ganti tema"><span class="theme-icon" id="themeIcon">☾</span><span id="themeLabel">Mode gelap</span></button><div class="profile"><div class="avatar">WK</div><span>Wali Kelas</span></div></div></header>
         <section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow" style="color:#f2c14e;">Tahun ajaran 2026/2027</p><h2 id="hero-title">Selamat datang di ruang digital XII TKJ 4.</h2><p>Temukan daftar siswa, jadwal piket, pelajaran, dan tugas kelas dengan cepat.</p></div><div class="hero-stat"><strong>36</strong><span>siswa aktif<br>semuanya laki-laki</span></div></section>
         <section class="stats" aria-label="Ringkasan kelas"><div class="stat"><div class="stat-top"><span>Warga kelas</span><div class="stat-icon">♙</div></div><strong>36 siswa</strong><span>Data siswa saat ini</span></div><div class="stat"><div class="stat-top"><span>Mata pelajaran</span><div class="stat-icon">▣</div></div><strong>8 mapel</strong><span>Jadwal belajar kelas</span></div><div class="stat"><div class="stat-top"><span>Jadwal piket</span><div class="stat-icon">◷</div></div><strong>6 hari</strong><span>Senin sampai Sabtu</span></div><div class="stat"><div class="stat-top"><span>Tugas aktif</span><div class="stat-icon">✓</div></div><strong id="taskTotal">3 tugas</strong><span>Perlu diperhatikan</span></div></section>
         <section class="section" id="siswa" aria-labelledby="siswa-title"><div class="section-heading"><div><h2 id="siswa-title">Daftar siswa</h2><p>36 siswa laki-laki di kelas XII TKJ 4</p></div><span id="studentCount">36 siswa</span></div><div class="panel"><div class="toolbar"><label class="search">⌕ <input id="studentSearch" type="search" placeholder="Cari nama siswa..." aria-label="Cari nama siswa"></label><span class="count">Data awal siap disesuaikan</span></div><div class="student-grid" id="studentGrid"></div></div></section>
@@ -68,6 +68,9 @@
 </div>
 <div class="scroll-controls" aria-label="Kontrol halaman"><button class="scroll-button" id="scrollTop" type="button" aria-label="Scroll ke atas" title="Scroll ke atas">↑</button><button class="scroll-button" id="scrollBottom" type="button" aria-label="Scroll ke bawah" title="Scroll ke bawah">↓</button></div>
 <script>
+    const currentDate = new Intl.DateTimeFormat('id-ID', { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' }).format(new Date());
+    document.querySelector('#currentDate').textContent = currentDate;
+
     const savedTheme = localStorage.getItem('kelas-theme');
     if (savedTheme === 'dark') document.documentElement.dataset.theme = 'dark';
     const themeToggle = document.querySelector('#themeToggle');

@@ -57,9 +57,9 @@
     </aside>
     <main class="main" id="beranda">
         <header class="topbar"><div><p class="eyebrow" id="currentDate">Memuat tanggal...</p><h1>Halo, warga kelas.</h1><p class="date">Semua informasi kelas ada di satu tempat.</p></div><button class="profile" id="teacherProfile" type="button" aria-label="Buka profil wali kelas"><div class="avatar">WK</div><span>Wali Kelas</span></button></header>
-        <section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow" style="color:#f2c14e;">Tahun ajaran 2026/2027</p><h2 id="hero-title">Selamat datang di ruang digital XII TKJ 4.</h2><p>Temukan daftar siswa, jadwal piket, pelajaran, dan tugas kelas dengan cepat.</p></div><div class="hero-stat"><strong>34</strong><span>siswa aktif<br>semuanya laki-laki</span></div></section>
-        <section class="stats" aria-label="Ringkasan kelas"><div class="stat"><div class="stat-top"><span>Warga kelas</span><div class="stat-icon">♙</div></div><strong>34 siswa</strong><span>Data siswa saat ini</span></div><div class="stat"><div class="stat-top"><span>Mata pelajaran</span><div class="stat-icon">▣</div></div><strong>8 mapel</strong><span>Jadwal belajar kelas</span></div><div class="stat"><div class="stat-top"><span>Jadwal piket</span><div class="stat-icon">◷</div></div><strong>6 hari</strong><span>Senin sampai Sabtu</span></div><div class="stat"><div class="stat-top"><span>Tugas aktif</span><div class="stat-icon">✓</div></div><strong id="taskTotal">3 tugas</strong><span>Perlu diperhatikan</span></div></section>
-        <section class="section" id="siswa" aria-labelledby="siswa-title"><div class="section-heading"><div><h2 id="siswa-title">Daftar siswa</h2><p>34 siswa laki-laki di kelas XII TKJ 4</p></div><span id="studentCount">34 siswa</span></div><div class="panel"><div class="toolbar"><label class="search">⌕ <input id="studentSearch" type="search" placeholder="Cari nama siswa..." aria-label="Cari nama siswa"></label><span class="count">Data awal siap disesuaikan</span></div><div class="student-grid" id="studentGrid"></div></div></section>
+        <section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow" style="color:#f2c14e;">Tahun ajaran 2026/2027</p><h2 id="hero-title">Selamat datang di ruang digital XII TKJ 4.</h2><p>Temukan daftar siswa, jadwal piket, pelajaran, dan tugas kelas dengan cepat.</p></div><div class="hero-stat"><strong>33</strong><span>siswa aktif<br>semuanya laki-laki</span></div></section>
+        <section class="stats" aria-label="Ringkasan kelas"><div class="stat"><div class="stat-top"><span>Warga kelas</span><div class="stat-icon">♙</div></div><strong>33 siswa</strong><span>Data siswa saat ini</span></div><div class="stat"><div class="stat-top"><span>Mata pelajaran</span><div class="stat-icon">▣</div></div><strong>8 mapel</strong><span>Jadwal belajar kelas</span></div><div class="stat"><div class="stat-top"><span>Jadwal piket</span><div class="stat-icon">◷</div></div><strong>6 hari</strong><span>Senin sampai Sabtu</span></div><div class="stat"><div class="stat-top"><span>Tugas aktif</span><div class="stat-icon">✓</div></div><strong id="taskTotal">3 tugas</strong><span>Perlu diperhatikan</span></div></section>
+        <section class="section" id="siswa" aria-labelledby="siswa-title"><div class="section-heading"><div><h2 id="siswa-title">Daftar siswa</h2><p>33 siswa laki-laki di kelas XII TKJ 4</p></div><span id="studentCount">33 siswa</span></div><div class="panel"><div class="toolbar"><label class="search">⌕ <input id="studentSearch" type="search" placeholder="Cari nama siswa..." aria-label="Cari nama siswa"></label><span class="count">Data awal siap disesuaikan</span></div><div class="student-grid" id="studentGrid"></div></div></section>
         <div class="split section" id="jadwal"><section aria-labelledby="mapel-title"><div class="section-heading"><div><h2 id="mapel-title">Jadwal mata pelajaran</h2><p>Hari dan jam belajar mingguan</p></div></div><div class="panel subject-list" id="subjectList"></div></section><section aria-labelledby="piket-title"><div class="section-heading"><div><h2 id="piket-title">Jadwal piket</h2><p>Jaga ruang belajar tetap nyaman</p></div></div><div class="panel duty-list" id="dutyList"></div></section></div>
         <section class="section" id="tugas" aria-labelledby="tugas-title"><div class="section-heading"><div><h2 id="tugas-title">Tugas kelas</h2><p>Pantau pekerjaan yang perlu diselesaikan</p></div><select class="filter" id="taskFilter" aria-label="Filter tugas"><option value="all">Semua tugas</option><option value="pending">Belum selesai</option><option value="done">Selesai</option></select></div><div class="panel task-list" id="taskList"></div></section>
         <footer>Ruang Kelas XII TKJ 4 · Data dapat diperbarui sesuai kebutuhan kelas</footer>
@@ -77,7 +77,7 @@
         'ADI', 'AKHFARA', 'ATHALLAH', 'BAGAS', 'BINTANG', 'DAMAR', 'DEDE',
         'FACHRI', 'FAIRUS', 'FAIZ', 'FATAN', 'FATHIR', 'FILHAN',
         'FIQRI', 'GILANG', 'HAYAT', 'IKHWAN', 'ILHAM', 'IRBAH', 'IRMAWANSYAH',
-        'NABIL', 'PEMBELATA', 'P.SALAD', 'RAFA', 'RENDI', 'REYZI', 'RIDHO H',
+        'NABIL', 'PEMBELATA', 'RAFA', 'RENDI', 'REYZI', 'RIDHO H',
         'RIDHO S', 'RIFA', 'RIO', 'TAMA', 'VIRGI', 'WILDAN', 'ZUAN'
     ];
     const studentDetails = {
@@ -106,7 +106,7 @@
         ['Senin', 'ADI · AKHFARA · ATHALLAH · BAGAS · BINTANG · DAMAR'],
         ['Selasa', 'DEDE · FACHRI · FAIRUS · FAIZ · FATAN · FATHIR'],
         ['Rabu', 'FATHIR · FILHAN · FIQRI · GILANG · HAYAT · IKHWAN'],
-        ['Kamis', 'ILHAM · IRBAH · IRMAWANSYAH · NABIL · PEMBELATA · P.SALAD'],
+        ['Kamis', 'ILHAM · IRBAH · IRMAWANSYAH · NABIL · PEMBELATA'],
         ['Jumat', 'RAFA · RENDI · REYZI · RIDHO H · RIDHO S'],
         ['Sabtu', 'RIFA · RIO · TAMA · VIRGI · WILDAN']
     ];

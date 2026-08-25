@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#102a43">
+    <meta name="theme-color" content="#f4f7f9">
     <title>Ruang Kelas | XII TKJ 4</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
         :root { --ink:#102a43; --muted:#627d98; --paper:#f4f7f9; --white:#fff; --line:#d9e2ec; --soft:#f8fafc; --card-soft:#f7fafb; --student-line:#e6edf2; --row-line:#edf2f5; --blue:#247ba0; --cyan:#5bc0be; --yellow:#f2c14e; --orange:#f28f3b; --green:#3da35d; --shadow:0 18px 45px rgba(16,42,67,.09); }
-        [data-theme="dark"] { --ink:#e6edf3; --muted:#9fb3c8; --paper:#101923; --white:#182633; --line:#2d4050; --soft:#13212d; --card-soft:#1d303d; --student-line:#2d4050; --row-line:#2d4050; --blue:#64c7d0; --cyan:#70d5d1; --shadow:0 18px 45px rgba(0,0,0,.24); }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { margin:0; color:var(--ink); background:var(--paper); font-family:'DM Sans',sans-serif; line-height:1.5; }
@@ -27,7 +26,6 @@
         .eyebrow { margin:0 0 5px; color:var(--blue); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; } h1,h2,h3 { font-family:'Space Grotesk',sans-serif; }
         h1 { margin:0; font-size:clamp(26px,3vw,38px); letter-spacing:-.04em; } .date { margin:0; color:var(--muted); font-size:13px; }
         .header-actions { display:flex; align-items:center; gap:10px; } .profile { display:flex; align-items:center; gap:11px; padding:7px 13px 7px 7px; border:1px solid var(--line); border-radius:30px; background:var(--white); } .avatar { display:grid; place-items:center; width:32px; height:32px; border-radius:50%; color:var(--ink); background:var(--cyan); font-weight:700; font-size:12px; } .profile span { font-size:12px; font-weight:700; }
-        .theme-toggle { display:flex; align-items:center; gap:7px; padding:9px 11px; border:1px solid var(--line); border-radius:9px; color:var(--ink); background:var(--white); cursor:pointer; font-size:12px; font-weight:700; } .theme-toggle:hover { border-color:var(--cyan); color:var(--blue); } .theme-icon { font-size:16px; line-height:1; }
         .hero { position:relative; display:grid; grid-template-columns:1fr 220px; gap:24px; min-height:190px; padding:30px 34px; border-radius:16px; color:var(--white); background:linear-gradient(120deg,#102a43 0%,#247ba0 100%); box-shadow:var(--shadow); overflow:hidden; }
         .hero::after { content:''; position:absolute; right:8%; bottom:-80px; width:220px; height:220px; border:34px solid rgba(242,193,78,.8); border-radius:50%; } .hero>* { position:relative; z-index:1; }
         .hero h2 { max-width:540px; margin:0 0 9px; font-size:clamp(24px,3.2vw,38px); letter-spacing:-.05em; line-height:1.08; } .hero p { max-width:520px; margin:0; color:#d9f2f2; font-size:14px; }
@@ -44,7 +42,7 @@
         .task { display:grid; grid-template-columns:1fr auto; gap:13px; align-items:center; padding:16px 18px; background:var(--white); border-bottom:1px solid var(--row-line); } .task h3 { margin:0 0 2px; font-size:14px; } .task p { margin:0; color:var(--muted); font-size:11px; } .badge { padding:5px 9px; border-radius:20px; font-size:10px; font-weight:700; white-space:nowrap; } .badge.pending { color:#9a6700; background:#fff4cc; } .badge.done { color:#237a3b; background:#def5e4; } .task.completed h3 { color:var(--muted); text-decoration:line-through; } .task.completed .badge { color:#237a3b; background:#def5e4; } .filter { padding:8px 10px; border:1px solid var(--line); border-radius:7px; color:var(--ink); background:var(--white); font-size:12px; } footer { padding-top:5px; color:var(--muted); font-size:11px; text-align:center; }
         .scroll-controls { position:fixed; right:22px; bottom:22px; z-index:10; display:grid; gap:8px; } .scroll-button { display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--line); border-radius:10px; color:var(--ink); background:var(--white); box-shadow:0 8px 20px rgba(16,42,67,.15); cursor:pointer; font-size:18px; transition:.2s ease; } .scroll-button:hover { color:var(--white); background:var(--blue); transform:translateY(-2px); } .scroll-button[hidden] { display:none; }
         @media(max-width:900px) { .shell { grid-template-columns:1fr; } .sidebar { position:static; height:auto; padding:16px 20px; } .brand { padding:0 0 15px; } .nav-label,.sidebar-card { display:none; } .nav { grid-template-columns:repeat(4,1fr); } .nav a { justify-content:center; padding:9px 5px; font-size:11px; } .main { padding-top:25px; } .student-grid { grid-template-columns:repeat(3,1fr); } }
-        @media(max-width:650px) { .main { padding:20px 14px 42px; } .topbar { align-items:start; margin-bottom:22px; } .header-actions { gap:7px; } .profile { display:flex; padding-right:10px; } .profile span { display:block; max-width:78px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; } .theme-toggle { padding:9px; } .theme-toggle span:last-child { display:none; } .hero { grid-template-columns:1fr; padding:22px; border-radius:13px; } .hero h2 { font-size:28px; } .hero-stat { padding:12px 0 0; border-top:1px solid rgba(255,255,255,.25); border-left:0; } .hero-stat strong { font-size:38px; } .stats { gap:9px; margin:16px 0 32px; } .stat { padding:13px; } .stat strong { margin-top:12px; font-size:21px; } .student-grid { grid-template-columns:repeat(2,1fr); gap:8px; padding:10px; } .student { gap:7px; padding:9px 7px; } .student-name { font-size:12px; } .split { grid-template-columns:1fr; } .subject-list { grid-template-columns:minmax(0,1fr) !important; padding:10px; } .subject-list > .day-schedule { grid-column:1; } .section-heading { align-items:start; flex-direction:column; gap:3px; } .toolbar { align-items:stretch; flex-direction:column; } .search { width:100%; } .schedule-item,.schedule-break { grid-template-columns:67px 1fr; padding-left:10px; padding-right:10px; } .duty-row { grid-template-columns:65px 1fr; gap:9px; padding:12px 13px; } .task { grid-template-columns:1fr auto; padding:14px; } .scroll-controls { right:14px; bottom:14px; } .nav a { flex-direction:column; gap:3px; padding:7px 2px; font-size:10px; text-align:center; line-height:1.1; } .nav a span:last-child { display:block; } .nav-icon { width:25px; height:25px; } }
+        @media(max-width:650px) { .main { padding:20px 14px 42px; } .topbar { align-items:start; margin-bottom:22px; } .profile { display:flex; padding-right:10px; } .profile span { display:block; max-width:78px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; } .hero { grid-template-columns:1fr; padding:22px; border-radius:13px; } .hero h2 { font-size:28px; } .hero-stat { padding:12px 0 0; border-top:1px solid rgba(255,255,255,.25); border-left:0; } .hero-stat strong { font-size:38px; } .stats { gap:9px; margin:16px 0 32px; } .stat { padding:13px; } .stat strong { margin-top:12px; font-size:21px; } .student-grid { grid-template-columns:repeat(2,1fr); gap:8px; padding:10px; } .student { gap:7px; padding:9px 7px; } .student-name { font-size:12px; } .split { grid-template-columns:1fr; } .subject-list { grid-template-columns:minmax(0,1fr) !important; padding:10px; } .subject-list > .day-schedule { grid-column:1; } .section-heading { align-items:start; flex-direction:column; gap:3px; } .toolbar { align-items:stretch; flex-direction:column; } .search { width:100%; } .schedule-item,.schedule-break { grid-template-columns:67px 1fr; padding-left:10px; padding-right:10px; } .duty-row { grid-template-columns:65px 1fr; gap:9px; padding:12px 13px; } .task { grid-template-columns:1fr auto; padding:14px; } .scroll-controls { right:14px; bottom:14px; } .nav a { flex-direction:column; gap:3px; padding:7px 2px; font-size:10px; text-align:center; line-height:1.1; } .nav a span:last-child { display:block; } .nav-icon { width:25px; height:25px; } }
         @media(max-width:650px) { .stats { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:9px; row-gap:14px; margin-bottom:40px; } .section { margin-bottom:40px; } .section-heading { margin-bottom:18px; } .split { gap:34px; } .subject-list { gap:15px; } .duty-list,.task-list { gap:2px; } .panel { box-shadow:0 8px 22px rgba(16,42,67,.06); } .nav { grid-template-columns:repeat(4,minmax(0,1fr)); } }
     </style>
 </head>
@@ -57,7 +55,7 @@
         <div class="sidebar-card"><p>Wali kelas</p><strong>Wali Kelas XII TKJ 4</strong></div>
     </aside>
     <main class="main" id="beranda">
-        <header class="topbar"><div><p class="eyebrow" id="currentDate">Memuat tanggal...</p><h1>Halo, warga kelas.</h1><p class="date">Semua informasi kelas ada di satu tempat.</p></div><div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode gelap" title="Ganti tema"><span class="theme-icon" id="themeIcon">☾</span><span id="themeLabel">Mode gelap</span></button><div class="profile"><div class="avatar">WK</div><span>Wali Kelas</span></div></div></header>
+        <header class="topbar"><div><p class="eyebrow" id="currentDate">Memuat tanggal...</p><h1>Halo, warga kelas.</h1><p class="date">Semua informasi kelas ada di satu tempat.</p></div><div class="profile"><div class="avatar">WK</div><span>Wali Kelas</span></div></header>
         <section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow" style="color:#f2c14e;">Tahun ajaran 2026/2027</p><h2 id="hero-title">Selamat datang di ruang digital XII TKJ 4.</h2><p>Temukan daftar siswa, jadwal piket, pelajaran, dan tugas kelas dengan cepat.</p></div><div class="hero-stat"><strong>36</strong><span>siswa aktif<br>semuanya laki-laki</span></div></section>
         <section class="stats" aria-label="Ringkasan kelas"><div class="stat"><div class="stat-top"><span>Warga kelas</span><div class="stat-icon">♙</div></div><strong>36 siswa</strong><span>Data siswa saat ini</span></div><div class="stat"><div class="stat-top"><span>Mata pelajaran</span><div class="stat-icon">▣</div></div><strong>8 mapel</strong><span>Jadwal belajar kelas</span></div><div class="stat"><div class="stat-top"><span>Jadwal piket</span><div class="stat-icon">◷</div></div><strong>6 hari</strong><span>Senin sampai Sabtu</span></div><div class="stat"><div class="stat-top"><span>Tugas aktif</span><div class="stat-icon">✓</div></div><strong id="taskTotal">3 tugas</strong><span>Perlu diperhatikan</span></div></section>
         <section class="section" id="siswa" aria-labelledby="siswa-title"><div class="section-heading"><div><h2 id="siswa-title">Daftar siswa</h2><p>36 siswa laki-laki di kelas XII TKJ 4</p></div><span id="studentCount">36 siswa</span></div><div class="panel"><div class="toolbar"><label class="search">⌕ <input id="studentSearch" type="search" placeholder="Cari nama siswa..." aria-label="Cari nama siswa"></label><span class="count">Data awal siap disesuaikan</span></div><div class="student-grid" id="studentGrid"></div></div></section>
@@ -70,25 +68,6 @@
 <script>
     const currentDate = new Intl.DateTimeFormat('id-ID', { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' }).format(new Date());
     document.querySelector('#currentDate').textContent = currentDate;
-
-    const savedTheme = localStorage.getItem('kelas-theme');
-    if (savedTheme === 'dark') document.documentElement.dataset.theme = 'dark';
-    const themeToggle = document.querySelector('#themeToggle');
-    const themeIcon = document.querySelector('#themeIcon');
-    const themeLabel = document.querySelector('#themeLabel');
-    const updateThemeButton = () => {
-        const isDark = document.documentElement.dataset.theme === 'dark';
-        themeIcon.textContent = isDark ? '☀' : '☾';
-        themeLabel.textContent = isDark ? 'Mode terang' : 'Mode gelap';
-        themeToggle.setAttribute('aria-label', isDark ? 'Aktifkan mode terang' : 'Aktifkan mode gelap');
-    };
-    updateThemeButton();
-    themeToggle.addEventListener('click', () => {
-        const isDark = document.documentElement.dataset.theme === 'dark';
-        document.documentElement.dataset.theme = isDark ? 'light' : 'dark';
-        localStorage.setItem('kelas-theme', isDark ? 'light' : 'dark');
-        updateThemeButton();
-    });
 
     /* ===================== DATA KELAS =====================
        Edit bagian ini untuk mengganti nama, jadwal, piket, dan tugas. */
